@@ -1,0 +1,139 @@
+\hypertarget{menu__option_8h_source}{}\doxysection{menu\+\_\+option.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <memory>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <optional>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_\_MENU\_CLASSES\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_\_MENU\_CLASSES\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_option_argument_base}{MenuOptionArgumentBase}}}
+\DoxyCodeLine{13 \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_menu_option_argument_base}{\string~MenuOptionArgumentBase}}() = 0;}
+\DoxyCodeLine{16 \};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{keyword}{inline} MenuOptionArgumentBase::\string~MenuOptionArgumentBase() \{\}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_menu_option_argument_base}{MenuOptionArgumentBase}} \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \textcolor{keyword}{typedef} T Type;}
+\DoxyCodeLine{26     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument}}(\textcolor{keyword}{const} Type\& value);}
+\DoxyCodeLine{27     Type get\_value();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} set\_value(Type value);}
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     Type value;}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{34 \mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>::MenuOptionArgument}}(\textcolor{keyword}{const} T\& value): value(value) \{\}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{37 T \mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>::get\_value}}() \{}
+\DoxyCodeLine{38     \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{42 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>::set\_value}}(T value) \{}
+\DoxyCodeLine{43     this-\/>value = value;}
+\DoxyCodeLine{44 \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} \{}
+\DoxyCodeLine{49 \textcolor{keyword}{public}:}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{58     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}{add}}(std::string key, \mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>}} *argument);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{67     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}{add}}(std::string key, T value);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{76     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{77     T \mbox{\hyperlink{class_menu_option_arguments_ace8889e910baf9b389c6829c2338e1e9}{get}}(std::string key);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{85     \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_arguments_afd4098fbce141f17be06b3cbda86e49d}{set}}(std::string key, T value);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88     \textcolor{keywordtype}{bool} has(std::string key);}
+\DoxyCodeLine{89 \textcolor{keyword}{private}:}
+\DoxyCodeLine{90     std::map<std::string, std::unique\_ptr<MenuOptionArgumentBase>> *arguments;}
+\DoxyCodeLine{91 \};}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{keyword}{inline} MenuOptionArguments::MenuOptionArguments() \{}
+\DoxyCodeLine{94     arguments = \textcolor{keyword}{new} std::map<std::string, std::unique\_ptr<MenuOptionArgumentBase>>();}
+\DoxyCodeLine{95 \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{98 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}{MenuOptionArguments::add}}(std::string key, \mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>}} *argument) \{}
+\DoxyCodeLine{99     (*arguments)[key] = std::unique\_ptr<MenuOptionArgumentBase>(argument);}
+\DoxyCodeLine{100 \}}
+\DoxyCodeLine{101 }
+\DoxyCodeLine{102 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{103 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}{MenuOptionArguments::add}}(std::string key, T value) \{}
+\DoxyCodeLine{104     \mbox{\hyperlink{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}{add}}(key, \textcolor{keyword}{new} \mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>}}(value));}
+\DoxyCodeLine{105 \}}
+\DoxyCodeLine{106 }
+\DoxyCodeLine{107 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{108 T \mbox{\hyperlink{class_menu_option_arguments_ace8889e910baf9b389c6829c2338e1e9}{MenuOptionArguments::get}}(std::string key) \{}
+\DoxyCodeLine{109     \textcolor{keyword}{auto} arg = \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>}}\&\textcolor{keyword}{>}(*((*arguments)[key]));}
+\DoxyCodeLine{110     \textcolor{keywordflow}{return} arg.get\_value();}
+\DoxyCodeLine{111 \}}
+\DoxyCodeLine{112 }
+\DoxyCodeLine{113 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_arguments_afd4098fbce141f17be06b3cbda86e49d}{MenuOptionArguments::set}}(std::string key, T value) \{}
+\DoxyCodeLine{115     \textcolor{keyword}{auto} arg = \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{class_menu_option_argument}{MenuOptionArgument<T>}}\&\textcolor{keyword}{>}(*((*arguments)[key]));}
+\DoxyCodeLine{116     arg.set\_value(value);}
+\DoxyCodeLine{117 \}}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{keyword}{inline} \textcolor{keywordtype}{bool} MenuOptionArguments::has(std::string key) \{}
+\DoxyCodeLine{120     \textcolor{keywordflow}{return} !(arguments-\/>find(key) == arguments-\/>end());}
+\DoxyCodeLine{121 \}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keyword}{typedef} std::function<void(\mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} args)> MenuOptionCallback;}
+\DoxyCodeLine{128 \textcolor{keyword}{typedef} std::function<void()> MenuOptionCallback2;}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_option}{MenuOption}} \{}
+\DoxyCodeLine{131 \textcolor{keyword}{public}:}
+\DoxyCodeLine{132     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback callback);}
+\DoxyCodeLine{133     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback callback, \textcolor{keywordtype}{bool} wait\_after\_exec);}
+\DoxyCodeLine{134     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback callback, \mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} arguments);}
+\DoxyCodeLine{135     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback callback, \mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} arguments, \textcolor{keywordtype}{bool} wait\_after\_exec);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback2 callback);}
+\DoxyCodeLine{138     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback2 callback, \textcolor{keywordtype}{bool} wait\_after\_exec);}
+\DoxyCodeLine{139     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback2 callback, \mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} arguments);}
+\DoxyCodeLine{140     \mbox{\hyperlink{class_menu_option}{MenuOption}}(std::string label, MenuOptionCallback2 callback, \mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} arguments, \textcolor{keywordtype}{bool} wait\_after\_exec);}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142     \textcolor{keywordtype}{bool} visible();}
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} visible(\textcolor{keywordtype}{bool} visible);}
+\DoxyCodeLine{144     \textcolor{keywordtype}{void} visible(std::function<\textcolor{keywordtype}{bool}()> visible\_cb);}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{150     std::string \mbox{\hyperlink{class_menu_option_aff0b709ddb94a92037a505b3fb0cd949}{get\_label}}();}
+\DoxyCodeLine{151 }
+\DoxyCodeLine{155     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_option_a6d6135e47db97e46e202e4e0020d6dc8}{execute}}();}
+\DoxyCodeLine{156 }
+\DoxyCodeLine{161     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_menu_option_ab40ac93901cbc53a490fe2205f0c33f6}{should\_wait}}();}
+\DoxyCodeLine{162 }
+\DoxyCodeLine{167     \mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} \&\mbox{\hyperlink{class_menu_option_ace35d1f75d793020c91a61e25091c2ca}{get\_args}}();}
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{keyword}{private}:}
+\DoxyCodeLine{170     std::string label;}
+\DoxyCodeLine{171     std::optional<MenuOptionCallback> callback;}
+\DoxyCodeLine{172     std::optional<MenuOptionCallback2> callback2;}
+\DoxyCodeLine{173     \textcolor{keywordtype}{bool} wait\_after\_exec = \textcolor{keyword}{true};}
+\DoxyCodeLine{174     \mbox{\hyperlink{class_menu_option_arguments}{MenuOptionArguments}} arguments;}
+\DoxyCodeLine{175     std::function<bool()> visible\_callback\_ = []() \{ \textcolor{keywordflow}{return} \textcolor{keyword}{true}; \};}
+\DoxyCodeLine{176 \};}
+
+\end{DoxyCode}

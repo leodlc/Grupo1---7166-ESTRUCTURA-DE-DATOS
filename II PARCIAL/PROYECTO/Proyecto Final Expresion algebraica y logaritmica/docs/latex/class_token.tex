@@ -1,0 +1,41 @@
+\hypertarget{class_token}{}\doxysection{Token Class Reference}
+\label{class_token}\index{Token@{Token}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_token_ad80928a0dff686ec8d11da0b5d6944a2}\label{class_token_ad80928a0dff686ec8d11da0b5d6944a2}} 
+enum class {\bfseries Token\+Type} \{ {\bfseries Operand}
+, {\bfseries Operator}
+, {\bfseries None}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_token_ac3d0a2ad2d2fe5ad55ae118401136958}\label{class_token_ac3d0a2ad2d2fe5ad55ae118401136958}} 
+{\bfseries Token} (std\+::string value, Token\+Type type)
+\item 
+\mbox{\Hypertarget{class_token_a9e2717b14410c4ea062a4dfbdf7de769}\label{class_token_a9e2717b14410c4ea062a4dfbdf7de769}} 
+std\+::string {\bfseries value} () const
+\item 
+\mbox{\Hypertarget{class_token_affd6e2520f60f1bcb7fcfd4b18e04cb8}\label{class_token_affd6e2520f60f1bcb7fcfd4b18e04cb8}} 
+void {\bfseries value} (std\+::string value)
+\item 
+\mbox{\Hypertarget{class_token_a7524ea3790ca775cc9536ac5423b729a}\label{class_token_a7524ea3790ca775cc9536ac5423b729a}} 
+Token\+Type {\bfseries type} () const
+\item 
+\mbox{\Hypertarget{class_token_a4b6f5e8908ae95a42638f02ad4aa96a6}\label{class_token_a4b6f5e8908ae95a42638f02ad4aa96a6}} 
+void {\bfseries type} (Token\+Type type)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_token_ab515c8251e52c93cfd4f657a97ca4ea3}\label{class_token_ab515c8251e52c93cfd4f657a97ca4ea3}} 
+std\+::ostream \& {\bfseries operator$<$$<$} (std\+::ostream \&os, \mbox{\hyperlink{class_token}{Token}} const \&t)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+token.\+h\item 
+token.\+cpp\end{DoxyCompactItemize}

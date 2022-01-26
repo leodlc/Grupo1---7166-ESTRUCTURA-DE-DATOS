@@ -1,0 +1,35 @@
+\hypertarget{utils_8h_source}{}\doxysection{utils.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <algorithm>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{keyword}{namespace }utils}
+\DoxyCodeLine{7 \{}
+\DoxyCodeLine{8     \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{double} to\_degrees(\textcolor{keywordtype}{double} radians) \{}
+\DoxyCodeLine{9         \textcolor{keywordflow}{return} (radians * 180) / M\_PI;}
+\DoxyCodeLine{10     \}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keyword}{inline} \textcolor{keyword}{static} \textcolor{keywordtype}{double} to\_radians(\textcolor{keywordtype}{double} degrees) \{}
+\DoxyCodeLine{13         \textcolor{keywordflow}{return} (degrees * M\_PI) / 180;}
+\DoxyCodeLine{14     \}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{21     \textcolor{keyword}{static} \textcolor{keyword}{inline} \textcolor{keywordtype}{int} is\_numeric(std::string str) \{}
+\DoxyCodeLine{22         \textcolor{keywordflow}{return} !str.empty() \&\& std::find\_if(str.begin(),}
+\DoxyCodeLine{23             str.end(), [](\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} c) \{}
+\DoxyCodeLine{24                 return !std::isdigit(c);}
+\DoxyCodeLine{25             \}) == str.end();}
+\DoxyCodeLine{26     \}}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{inline} \textcolor{keyword}{static} std::string trim(\textcolor{keyword}{const} std::string\& str) \{}
+\DoxyCodeLine{29         std::string trimmed(str);}
+\DoxyCodeLine{30         trimmed = trimmed.erase(trimmed.find\_last\_not\_of(\textcolor{stringliteral}{"{} \(\backslash\)t\(\backslash\)n\(\backslash\)r\(\backslash\)f\(\backslash\)v"{}}) + 1);}
+\DoxyCodeLine{31         trimmed = trimmed.erase(0, trimmed.find\_first\_not\_of(\textcolor{stringliteral}{"{} \(\backslash\)t\(\backslash\)n\(\backslash\)r\(\backslash\)f\(\backslash\)v"{}}));}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33         \textcolor{keywordflow}{return} trimmed;}
+\DoxyCodeLine{34     \}}
+\DoxyCodeLine{35 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,279 @@
+\hypertarget{doubly__linked__list_8h_source}{}\doxysection{doubly\+\_\+linked\+\_\+list.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}node.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <exception>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList}} \{}
+\DoxyCodeLine{9 \textcolor{keyword}{public}:}
+\DoxyCodeLine{10     \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} push\_back(\textcolor{keyword}{const} T \&value);}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} push\_front(\textcolor{keyword}{const} T \&value);}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} push\_at(\textcolor{keywordtype}{int} index, \textcolor{keyword}{const} T \&value);}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} remove\_at(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17     \textcolor{keywordtype}{void} for\_each(std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_node}{Node<T>}} *, \textcolor{keywordtype}{int})> callback);}
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} for\_each(std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_node}{Node<T>}}*)> callback);}
+\DoxyCodeLine{19     \textcolor{keywordtype}{void} for\_each(std::function<\textcolor{keywordtype}{void}(T, \textcolor{keywordtype}{int})> callback);}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} for\_each(std::function<\textcolor{keywordtype}{void}(T)> callback);}
+\DoxyCodeLine{21     }
+\DoxyCodeLine{22     \textcolor{keywordtype}{void} until(std::function<\textcolor{keywordtype}{bool}(\mbox{\hyperlink{class_node}{Node<T>}}*)> callback);}
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} until(std::function<\textcolor{keywordtype}{bool}(T)> callback);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{class_node}{Node<T>}} *find(std::function<\textcolor{keywordtype}{bool}(\mbox{\hyperlink{class_node}{Node<T>}} *, \textcolor{keywordtype}{int})> callback);}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_node}{Node<T>}}* find(std::function<\textcolor{keywordtype}{bool}(\mbox{\hyperlink{class_node}{Node<T>}}*)> callback);}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_node}{Node<T>}} *find(std::function<\textcolor{keywordtype}{bool}(T, \textcolor{keywordtype}{int})> callback);}
+\DoxyCodeLine{28     \mbox{\hyperlink{class_node}{Node<T>}}* find(std::function<\textcolor{keywordtype}{bool}(T)> callback);}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     T at(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} clear();}
+\DoxyCodeLine{33     \textcolor{keywordtype}{int} size();}
+\DoxyCodeLine{34     \textcolor{keywordtype}{bool} empty();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{private}:}
+\DoxyCodeLine{37     \mbox{\hyperlink{class_node}{Node<T>}} *node\_at(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_node}{Node<T>}} *last();}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \mbox{\hyperlink{class_node}{Node<T>}} *head = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{int} \_size = 0;}
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{47 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::push\_back}}(\textcolor{keyword}{const} T \&value) \{}
+\DoxyCodeLine{48     \_size++;}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keywordflow}{if} (head == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{51         head = \textcolor{keyword}{new} \mbox{\hyperlink{class_node}{Node<T>}}(value);}
+\DoxyCodeLine{52         \textcolor{keywordflow}{return};}
+\DoxyCodeLine{53     \}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \mbox{\hyperlink{class_node}{Node<T>}} *last\_node = last();}
+\DoxyCodeLine{56     \mbox{\hyperlink{class_node}{Node<T>}} *node = \textcolor{keyword}{new} \mbox{\hyperlink{class_node}{Node<T>}}(value);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     last\_node-\/>set\_next(node);}
+\DoxyCodeLine{59     node-\/>set\_previous(last\_node);}
+\DoxyCodeLine{60 \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{63 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::push\_front}}(\textcolor{keyword}{const} T \&value) \{}
+\DoxyCodeLine{64     \textcolor{keywordflow}{if} (head == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{65         \textcolor{keywordflow}{return} push\_back(value);}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68     \mbox{\hyperlink{class_node}{Node<T>}} *node = \textcolor{keyword}{new} \mbox{\hyperlink{class_node}{Node<T>}}(value);}
+\DoxyCodeLine{69     \mbox{\hyperlink{class_node}{Node<T>}} *temp = head;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     head = node;}
+\DoxyCodeLine{72     head-\/>set\_next(temp);}
+\DoxyCodeLine{73     temp-\/>set\_previous(head);}
+\DoxyCodeLine{74     \_size++;}
+\DoxyCodeLine{75 \}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{78 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::push\_at}}(\textcolor{keywordtype}{int} index, \textcolor{keyword}{const} T \&value) \{}
+\DoxyCodeLine{79     \textcolor{keywordflow}{if} (index < 0 || index > \_size) \{}
+\DoxyCodeLine{80         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}index out of bounds"{}});}
+\DoxyCodeLine{81     \}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83     \textcolor{keywordflow}{if} (index == 0 || \_size == 0) \{}
+\DoxyCodeLine{84         \textcolor{keywordflow}{return} push\_front(value);}
+\DoxyCodeLine{85     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (index == \_size) \{}
+\DoxyCodeLine{86         \textcolor{keywordflow}{return} push\_back(value);}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \mbox{\hyperlink{class_node}{Node<T>}} *target = node\_at(index);}
+\DoxyCodeLine{90     \mbox{\hyperlink{class_node}{Node<T>}} *previous = target-\/>get\_previous();}
+\DoxyCodeLine{91     \mbox{\hyperlink{class_node}{Node<T>}} *next = target-\/>get\_next();}
+\DoxyCodeLine{92     \mbox{\hyperlink{class_node}{Node<T>}} *nodo = \textcolor{keyword}{new} \mbox{\hyperlink{class_node}{Node<T>}}(value);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     previous-\/>set\_next(nodo);}
+\DoxyCodeLine{95     nodo-\/>set\_next(target);}
+\DoxyCodeLine{96     nodo-\/>set\_previous(previous);}
+\DoxyCodeLine{97     target-\/>set\_previous(nodo);}
+\DoxyCodeLine{98     \_size++;}
+\DoxyCodeLine{99 \}}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{102 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::remove\_at}}(\textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{103     \textcolor{keywordflow}{if} (index < 0 || index >= \_size) \{}
+\DoxyCodeLine{104         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}index out of bounds"{}});}
+\DoxyCodeLine{105     \}}
+\DoxyCodeLine{106     }
+\DoxyCodeLine{107     \textcolor{keywordflow}{if} (\_size == 1) \{}
+\DoxyCodeLine{108         \textcolor{keyword}{delete} head;}
+\DoxyCodeLine{109         head = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{110     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (index == 0) \{}
+\DoxyCodeLine{111         \mbox{\hyperlink{class_node}{Node<T>}} *temp = head;}
+\DoxyCodeLine{112         head = head-\/>get\_next();}
+\DoxyCodeLine{113         head-\/>set\_previous(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{114         \textcolor{keyword}{delete} temp;}
+\DoxyCodeLine{115     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (index == \_size -\/ 1) \{}
+\DoxyCodeLine{116         \mbox{\hyperlink{class_node}{Node<T>}} *node = last();}
+\DoxyCodeLine{117         \mbox{\hyperlink{class_node}{Node<T>}} *previous = node-\/>get\_previous();}
+\DoxyCodeLine{118         }
+\DoxyCodeLine{119         previous-\/>set\_next(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{120         \textcolor{keyword}{delete} node;}
+\DoxyCodeLine{121     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{122         \mbox{\hyperlink{class_node}{Node<T>}} *target = node\_at(index);}
+\DoxyCodeLine{123         \mbox{\hyperlink{class_node}{Node<T>}} *previous = target-\/>get\_previous();}
+\DoxyCodeLine{124         \mbox{\hyperlink{class_node}{Node<T>}} *next = target-\/>get\_next();}
+\DoxyCodeLine{125 }
+\DoxyCodeLine{126         previous-\/>set\_next(next);}
+\DoxyCodeLine{127         next-\/>set\_previous(previous);}
+\DoxyCodeLine{128         \textcolor{keyword}{delete} target;}
+\DoxyCodeLine{129     \}}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131     \_size-\/-\/;}
+\DoxyCodeLine{132 \}}
+\DoxyCodeLine{133 }
+\DoxyCodeLine{134 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{135 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::for\_each}}(std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_node}{Node<T>}}*, \textcolor{keywordtype}{int})> callback) \{}
+\DoxyCodeLine{136     \mbox{\hyperlink{class_node}{Node<T>}} *current = head;}
+\DoxyCodeLine{137     \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{keywordflow}{while} (current != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{140         callback(current, index);}
+\DoxyCodeLine{141         current = current-\/>get\_next();}
+\DoxyCodeLine{142         index++;}
+\DoxyCodeLine{143     \}}
+\DoxyCodeLine{144 \}}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{147 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::for\_each}}(std::function<\textcolor{keywordtype}{void}(\mbox{\hyperlink{class_node}{Node<T>}}*)> callback) \{}
+\DoxyCodeLine{148     for\_each([\&](\mbox{\hyperlink{class_node}{Node<T>}} *node, \textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{149         callback(node-\/>get\_data());}
+\DoxyCodeLine{150     \});}
+\DoxyCodeLine{151 \}}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{154 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::for\_each}}(std::function<\textcolor{keywordtype}{void}(T)> callback) \{}
+\DoxyCodeLine{155     for\_each([\&](\mbox{\hyperlink{class_node}{Node<T>}} *node, \textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{156         callback(node-\/>get\_data());}
+\DoxyCodeLine{157     \});}
+\DoxyCodeLine{158 \}}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{161 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::for\_each}}(std::function<\textcolor{keywordtype}{void}(T, \textcolor{keywordtype}{int})> callback) \{}
+\DoxyCodeLine{162     for\_each([\&](\mbox{\hyperlink{class_node}{Node<T>}} *node, \textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{163         callback(node-\/>get\_data(), index);}
+\DoxyCodeLine{164     \});}
+\DoxyCodeLine{165 \}}
+\DoxyCodeLine{166 }
+\DoxyCodeLine{167 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{168 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::until}}(std::function<\textcolor{keywordtype}{bool}(\mbox{\hyperlink{class_node}{Node<T>}}*)> callback) \{}
+\DoxyCodeLine{169     \mbox{\hyperlink{class_node}{Node<T>}} *current = head;}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171     \textcolor{keywordflow}{while} (current != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{172         \textcolor{keywordflow}{if} (!callback(current)) \textcolor{keywordflow}{break};}
+\DoxyCodeLine{173         current = current-\/>get\_next();}
+\DoxyCodeLine{174     \}}
+\DoxyCodeLine{175 \}}
+\DoxyCodeLine{176 }
+\DoxyCodeLine{177 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{178 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::until}}(std::function<\textcolor{keywordtype}{bool}(T)> callback) \{}
+\DoxyCodeLine{179     until([\&](\mbox{\hyperlink{class_node}{Node<T>}} *node) \{}
+\DoxyCodeLine{180         \textcolor{keywordflow}{return} callback(node-\/>get\_data());}
+\DoxyCodeLine{181     \});}
+\DoxyCodeLine{182 \}}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{185 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::find}}(std::function<\textcolor{keywordtype}{bool}(\mbox{\hyperlink{class_node}{Node<T>}} *, \textcolor{keywordtype}{int})> callback) \{}
+\DoxyCodeLine{186     \mbox{\hyperlink{class_node}{Node<T>}} *current = head;}
+\DoxyCodeLine{187     \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{188 }
+\DoxyCodeLine{189     \textcolor{keywordflow}{while} (current != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{190         \textcolor{keywordflow}{if} (callback(current, index++)) \{}
+\DoxyCodeLine{191             \textcolor{keywordflow}{return} current;}
+\DoxyCodeLine{192         \}}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194         current = current-\/>get\_next();}
+\DoxyCodeLine{195     \}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{198 \}}
+\DoxyCodeLine{199 }
+\DoxyCodeLine{200 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{201 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::find}}(std::function<\textcolor{keywordtype}{bool}(\mbox{\hyperlink{class_node}{Node<T>}} *)> callback) \{}
+\DoxyCodeLine{202     \textcolor{keywordflow}{return} find([\&](\mbox{\hyperlink{class_node}{Node<T>}} *node, \textcolor{keywordtype}{int} index) -\/> \textcolor{keywordtype}{bool} \{}
+\DoxyCodeLine{203         \textcolor{keywordflow}{return} callback(node-\/>get\_data());}
+\DoxyCodeLine{204     \});}
+\DoxyCodeLine{205 \}}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{208 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::find}}(std::function<\textcolor{keywordtype}{bool}(T)> callback) \{}
+\DoxyCodeLine{209     \textcolor{keywordflow}{return} find([\&](\mbox{\hyperlink{class_node}{Node<T>}} *node, \textcolor{keywordtype}{int} index) -\/> \textcolor{keywordtype}{bool} \{}
+\DoxyCodeLine{210         \textcolor{keywordflow}{return} callback(node-\/>get\_data());}
+\DoxyCodeLine{211     \});}
+\DoxyCodeLine{212 \}}
+\DoxyCodeLine{213 }
+\DoxyCodeLine{214 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{215 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::find}}(std::function<\textcolor{keywordtype}{bool}(T, \textcolor{keywordtype}{int})> callback) \{}
+\DoxyCodeLine{216     \textcolor{keywordflow}{return} find([\&](\mbox{\hyperlink{class_node}{Node<T>}} *node, \textcolor{keywordtype}{int} index) -\/> \textcolor{keywordtype}{bool} \{}
+\DoxyCodeLine{217         \textcolor{keywordflow}{return} callback(node-\/>get\_data(), index);}
+\DoxyCodeLine{218     \});}
+\DoxyCodeLine{219 \}}
+\DoxyCodeLine{220 }
+\DoxyCodeLine{221 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{222 T \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::at}}(\textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{223     \textcolor{keywordflow}{return} node\_at(index)-\/>get\_data();}
+\DoxyCodeLine{224 \}}
+\DoxyCodeLine{225 }
+\DoxyCodeLine{226 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{227 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::clear}}() \{}
+\DoxyCodeLine{228     \textcolor{keywordflow}{while} (!empty()) \{}
+\DoxyCodeLine{229         remove\_at(0);}
+\DoxyCodeLine{230     \}}
+\DoxyCodeLine{231 \}}
+\DoxyCodeLine{232 }
+\DoxyCodeLine{233 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{234 \textcolor{keywordtype}{int} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::size}}() \{}
+\DoxyCodeLine{235     \textcolor{keywordflow}{return} \_size;}
+\DoxyCodeLine{236 \}}
+\DoxyCodeLine{237 }
+\DoxyCodeLine{238 \textcolor{keyword}{template} <\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{239 \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::empty}}() \{}
+\DoxyCodeLine{240     \textcolor{keywordflow}{return} \_size == 0;}
+\DoxyCodeLine{241 \}}
+\DoxyCodeLine{242 }
+\DoxyCodeLine{243 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{244 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::last}}() \{}
+\DoxyCodeLine{245     \textcolor{keywordflow}{if} (\_size == 0) \{}
+\DoxyCodeLine{246         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{247     \}}
+\DoxyCodeLine{248     }
+\DoxyCodeLine{249     \textcolor{keywordflow}{return} node\_at(\_size -\/ 1);}
+\DoxyCodeLine{250 \}}
+\DoxyCodeLine{251 }
+\DoxyCodeLine{252 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{253 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_doubly_linked_list}{DoublyLinkedList<T>::node\_at}}(\textcolor{keywordtype}{int} index) \{}
+\DoxyCodeLine{254     \textcolor{keywordflow}{if} (index < 0 || index >= \_size) \{}
+\DoxyCodeLine{255         \textcolor{keywordflow}{throw} std::invalid\_argument(\textcolor{stringliteral}{"{}index out of bounds"{}});}
+\DoxyCodeLine{256     \}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keywordflow}{if} (index == 0) \{}
+\DoxyCodeLine{259         \textcolor{keywordflow}{return} head;}
+\DoxyCodeLine{260     \}}
+\DoxyCodeLine{261 }
+\DoxyCodeLine{262     \textcolor{keywordtype}{int} current\_index = 0;}
+\DoxyCodeLine{263     \mbox{\hyperlink{class_node}{Node<T>}} *last = head;}
+\DoxyCodeLine{264 }
+\DoxyCodeLine{265     \textcolor{keywordflow}{while} (last-\/>get\_next() != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{266         \textcolor{keywordflow}{if} (current\_index == index) \{}
+\DoxyCodeLine{267             \textcolor{keywordflow}{break};}
+\DoxyCodeLine{268         \}}
+\DoxyCodeLine{269 }
+\DoxyCodeLine{270         current\_index++;}
+\DoxyCodeLine{271         last = last-\/>get\_next();}
+\DoxyCodeLine{272     \}}
+\DoxyCodeLine{273 }
+\DoxyCodeLine{274     \textcolor{keywordflow}{return} last;}
+\DoxyCodeLine{275 \}}
+
+\end{DoxyCode}

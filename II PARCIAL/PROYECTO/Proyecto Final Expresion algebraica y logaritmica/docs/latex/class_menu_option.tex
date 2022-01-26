@@ -1,0 +1,95 @@
+\hypertarget{class_menu_option}{}\doxysection{Menu\+Option Class Reference}
+\label{class_menu_option}\index{MenuOption@{MenuOption}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_option_acbdd3078bab1e85466c0729279722b43}\label{class_menu_option_acbdd3078bab1e85466c0729279722b43}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback callback)
+\item 
+\mbox{\Hypertarget{class_menu_option_a94d548dd04e012fe8d77a66af90680f8}\label{class_menu_option_a94d548dd04e012fe8d77a66af90680f8}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback callback, bool wait\+\_\+after\+\_\+exec)
+\item 
+\mbox{\Hypertarget{class_menu_option_aeba4e414dfd530d3fc16a61c4bbb315e}\label{class_menu_option_aeba4e414dfd530d3fc16a61c4bbb315e}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback callback, \mbox{\hyperlink{class_menu_option_arguments}{Menu\+Option\+Arguments}} arguments)
+\item 
+\mbox{\Hypertarget{class_menu_option_a2b7e9972f1b47a85afa6ddd5d6a6de40}\label{class_menu_option_a2b7e9972f1b47a85afa6ddd5d6a6de40}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback callback, \mbox{\hyperlink{class_menu_option_arguments}{Menu\+Option\+Arguments}} arguments, bool wait\+\_\+after\+\_\+exec)
+\item 
+\mbox{\Hypertarget{class_menu_option_a0ff94f27fa9cbb546ad6f5b5cef55773}\label{class_menu_option_a0ff94f27fa9cbb546ad6f5b5cef55773}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback2 callback)
+\item 
+\mbox{\Hypertarget{class_menu_option_a37485a20edcaf59898ce55311b284b64}\label{class_menu_option_a37485a20edcaf59898ce55311b284b64}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback2 callback, bool wait\+\_\+after\+\_\+exec)
+\item 
+\mbox{\Hypertarget{class_menu_option_ab1251e8a4acb7d2a87395a26db03b6df}\label{class_menu_option_ab1251e8a4acb7d2a87395a26db03b6df}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback2 callback, \mbox{\hyperlink{class_menu_option_arguments}{Menu\+Option\+Arguments}} arguments)
+\item 
+\mbox{\Hypertarget{class_menu_option_ab9f795d5527bfcb64b75c893ac33a6c9}\label{class_menu_option_ab9f795d5527bfcb64b75c893ac33a6c9}} 
+{\bfseries Menu\+Option} (std\+::string label, Menu\+Option\+Callback2 callback, \mbox{\hyperlink{class_menu_option_arguments}{Menu\+Option\+Arguments}} arguments, bool wait\+\_\+after\+\_\+exec)
+\item 
+\mbox{\Hypertarget{class_menu_option_a0df0a33f257b60e2f98239a5a1fcfc2d}\label{class_menu_option_a0df0a33f257b60e2f98239a5a1fcfc2d}} 
+bool {\bfseries visible} ()
+\item 
+\mbox{\Hypertarget{class_menu_option_ac23fd3dfa64309da5bc98c2a81b1f54a}\label{class_menu_option_ac23fd3dfa64309da5bc98c2a81b1f54a}} 
+void {\bfseries visible} (bool visible)
+\item 
+\mbox{\Hypertarget{class_menu_option_a59bcf1fee9446796ab2141896a205deb}\label{class_menu_option_a59bcf1fee9446796ab2141896a205deb}} 
+void {\bfseries visible} (std\+::function$<$ bool()$>$ visible\+\_\+cb)
+\item 
+std\+::string \mbox{\hyperlink{class_menu_option_aff0b709ddb94a92037a505b3fb0cd949}{get\+\_\+label}} ()
+\begin{DoxyCompactList}\small\item\em obtiene la etiqueta de la opcion del menu \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_option_a6d6135e47db97e46e202e4e0020d6dc8}\label{class_menu_option_a6d6135e47db97e46e202e4e0020d6dc8}} 
+void {\bfseries execute} ()
+\begin{DoxyCompactList}\small\item\em ejecuta la accion de esta opcion del menu \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_option_ab40ac93901cbc53a490fe2205f0c33f6}{should\+\_\+wait}} ()
+\begin{DoxyCompactList}\small\item\em verifica si esta opcion deberia esperar al usuario \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_menu_option_arguments}{Menu\+Option\+Arguments}} \& \mbox{\hyperlink{class_menu_option_ace35d1f75d793020c91a61e25091c2ca}{get\+\_\+args}} ()
+\begin{DoxyCompactList}\small\item\em obtiene todos los argumentos de esta opcion \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_option_ace35d1f75d793020c91a61e25091c2ca}\label{class_menu_option_ace35d1f75d793020c91a61e25091c2ca}} 
+\index{MenuOption@{MenuOption}!get\_args@{get\_args}}
+\index{get\_args@{get\_args}!MenuOption@{MenuOption}}
+\doxysubsubsection{\texorpdfstring{get\_args()}{get\_args()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu_option_arguments}{Menu\+Option\+Arguments}} \& Menu\+Option\+::get\+\_\+args (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+obtiene todos los argumentos de esta opcion 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_option_aff0b709ddb94a92037a505b3fb0cd949}\label{class_menu_option_aff0b709ddb94a92037a505b3fb0cd949}} 
+\index{MenuOption@{MenuOption}!get\_label@{get\_label}}
+\index{get\_label@{get\_label}!MenuOption@{MenuOption}}
+\doxysubsubsection{\texorpdfstring{get\_label()}{get\_label()}}
+{\footnotesize\ttfamily std\+::string Menu\+Option\+::get\+\_\+label (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+obtiene la etiqueta de la opcion del menu 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_option_ab40ac93901cbc53a490fe2205f0c33f6}\label{class_menu_option_ab40ac93901cbc53a490fe2205f0c33f6}} 
+\index{MenuOption@{MenuOption}!should\_wait@{should\_wait}}
+\index{should\_wait@{should\_wait}!MenuOption@{MenuOption}}
+\doxysubsubsection{\texorpdfstring{should\_wait()}{should\_wait()}}
+{\footnotesize\ttfamily bool Menu\+Option\+::should\+\_\+wait (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+verifica si esta opcion deberia esperar al usuario 
+
+\begin{DoxyReturn}{Returns}
+true si deberia esperar, caso contrario devuelve false 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+menu\+\_\+option.\+h\item 
+menu\+\_\+option.\+cpp\end{DoxyCompactItemize}

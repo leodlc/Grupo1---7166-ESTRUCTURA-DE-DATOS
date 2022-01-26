@@ -1,0 +1,45 @@
+\hypertarget{menu_8h_source}{}\doxysection{menu.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include "{}menu\_option.h"{}}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#define KEY\_UP 72}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define KEY\_DOWN 80}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define KEY\_LEFT 77}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define KEY\_RIGHT 75}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define KEY\_ENTER 13}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define KEY\_ESCAPE 27}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu}{Menu}} \{}
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_menu}{Menu}}();}
+\DoxyCodeLine{17     \mbox{\hyperlink{class_menu}{Menu}}(std::string title);}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{23     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_af00883540de9adcb6ad516e897c19cd2}{add\_option}}(\mbox{\hyperlink{class_menu_option}{MenuOption}} option);}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_a94a49db0eb130cb6a6c9d862fb59e281}{remove\_option}}(\textcolor{keywordtype}{int} index);}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_a2e784e39d600214e778acbfcbfe04a1b}{display}}();}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_a14199ea81c4618e3cb599d58e0633db0}{stop}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{45     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_menu_a49b5360dca4d3f8de2e4728657b3dba3}{is\_running}}();}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     \mbox{\hyperlink{class_menu_option}{MenuOption}} exit\_option(std::string label = \textcolor{stringliteral}{"{}Salir"{}}, \textcolor{keywordtype}{bool} wait\_after\_exec = \textcolor{keyword}{false}) \{}
+\DoxyCodeLine{48         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_menu_option}{MenuOption}}(label, [\&]() \{}
+\DoxyCodeLine{49             \mbox{\hyperlink{class_menu_a14199ea81c4618e3cb599d58e0633db0}{stop}}();}
+\DoxyCodeLine{50         \}, wait\_after\_exec);}
+\DoxyCodeLine{51     \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{private}:}
+\DoxyCodeLine{54     std::string title;}
+\DoxyCodeLine{55     std::vector<MenuOption> options;}
+\DoxyCodeLine{56     HANDLE conhandler;}
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} running = \textcolor{keyword}{false};}
+\DoxyCodeLine{58 \};}
+
+\end{DoxyCode}
