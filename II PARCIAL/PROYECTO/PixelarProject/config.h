@@ -1,0 +1,1 @@
+#define IMAGEMAGICK_VERSION 0x71

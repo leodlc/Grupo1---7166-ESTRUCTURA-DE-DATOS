@@ -1,0 +1,21 @@
+﻿  asciifier.cpp
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(125,29): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(134,28): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(146,32): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(154,37): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(160,32): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(168,37): warning C4244: '=': conversión de 'double' a 'int'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(235,19): warning C4244: 'inicializando': conversión de 'ssize_t' a 'int'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(239,44): warning C4244: 'inicializando': conversión de 'double' a 'MagickCore::Quantum'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(249,31): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(250,41): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(258,32): warning C4244: 'inicializando': conversión de 'double' a 'MagickCore::Quantum'; posible pérdida de datos
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(361,31): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(370,41): warning C4018: '<': no coinciden signed/unsigned
+C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\asciifier.cpp(383,77): warning C4267: 'argumento': conversión de 'size_t' a 'int'; posible pérdida de datos
+  Img2Ascii.cpp
+  options.cpp
+  term_info.cpp
+  Generando código...
+  getopt.c
+  Img2Ascii.vcxproj -> C:\Users\Asrock\Documents\SEMESTRE OCT21-MAR22\Estructura de datos\proyecto segundo parcial\PixelarProject\x64\Debug\Img2Ascii.exe
