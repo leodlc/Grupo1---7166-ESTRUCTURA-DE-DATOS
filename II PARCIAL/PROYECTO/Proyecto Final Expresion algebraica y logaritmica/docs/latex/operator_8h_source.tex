@@ -1,0 +1,78 @@
+\hypertarget{operator_8h_source}{}\doxysection{operator.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <type\_traits>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{typedef} std::function<double(std::vector<double> operands)> OperationCallback;}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{template}< \textcolor{keyword}{class} T >}
+\DoxyCodeLine{11 \textcolor{keyword}{inline} \textcolor{keyword}{constexpr} \textcolor{keywordtype}{bool} is\_floating\_point\_val = std::is\_floating\_point<T>::value;}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{template}<\textcolor{keyword}{typename} R, \textcolor{keyword}{typename}...> \textcolor{keyword}{struct }\mbox{\hyperlink{structfst}{fst}} \{ \textcolor{keyword}{typedef} R type; \};}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{class_operator}{Operator}} \{}
+\DoxyCodeLine{16 \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \textcolor{keyword}{enum class} OperatorType \{}
+\DoxyCodeLine{18         Regular,}
+\DoxyCodeLine{19         Function}
+\DoxyCodeLine{20     \};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \textcolor{keyword}{enum class} OperatorAssociativity \{}
+\DoxyCodeLine{23         Left,}
+\DoxyCodeLine{24         Right,}
+\DoxyCodeLine{25         None}
+\DoxyCodeLine{26     \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28     \textcolor{keyword}{explicit} \mbox{\hyperlink{class_operator}{Operator}}(}
+\DoxyCodeLine{29         std::string symbol,}
+\DoxyCodeLine{30         OperationCallback callback,}
+\DoxyCodeLine{31         OperatorType type,}
+\DoxyCodeLine{32         OperatorAssociativity associativity,}
+\DoxyCodeLine{33         \textcolor{keywordtype}{size\_t} precedence,}
+\DoxyCodeLine{34         \textcolor{keywordtype}{size\_t} operandsCount);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     std::string symbol() \textcolor{keyword}{const};}
+\DoxyCodeLine{37     OperatorType type() \textcolor{keyword}{const};}
+\DoxyCodeLine{38     \textcolor{keywordtype}{bool} matches(std::string symbol);}
+\DoxyCodeLine{39     OperatorAssociativity associativity() \textcolor{keyword}{const};}
+\DoxyCodeLine{40     \textcolor{keywordtype}{size\_t} precedence() \textcolor{keyword}{const};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{size\_t} operandsCount() \textcolor{keyword}{const};}
+\DoxyCodeLine{42     std::vector<std::string> aliases() \textcolor{keyword}{const};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T, \textcolor{keyword}{typename} = std::enable\_if\_t<(... \&\& is\_floating\_point\_val<T>)>>}
+\DoxyCodeLine{45     \textcolor{keywordtype}{double} operate(T... args) \{}
+\DoxyCodeLine{46         std::vector<double> operands\{ \{ args... \} \};}
+\DoxyCodeLine{47         \textcolor{keywordflow}{return} operate(operands);}
+\DoxyCodeLine{48     \}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{keywordtype}{double} operate(std::vector<double> operands) \{}
+\DoxyCodeLine{51         \textcolor{keywordflow}{return} callback\_(operands);}
+\DoxyCodeLine{52     \}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \textcolor{keyword}{template}<\textcolor{keyword}{typename}... T>}
+\DoxyCodeLine{55     \mbox{\hyperlink{class_operator}{Operator}}\& alias(std::string arg, T... args) \{}
+\DoxyCodeLine{56         std::vector<std::string> aliases\{ \{arg, args...\} \};}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58         \textcolor{keywordflow}{for} (std::string alias : aliases) \{}
+\DoxyCodeLine{59             aliases\_.push\_back(alias);}
+\DoxyCodeLine{60         \}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};}
+\DoxyCodeLine{63     \}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{keyword}{private}:}
+\DoxyCodeLine{66     std::string symbol\_;}
+\DoxyCodeLine{67     OperatorType type\_;}
+\DoxyCodeLine{68     \textcolor{keywordtype}{size\_t} precedence\_;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{size\_t} operandsCount\_;}
+\DoxyCodeLine{70     OperatorAssociativity associativity\_;}
+\DoxyCodeLine{71     OperationCallback callback\_;}
+\DoxyCodeLine{72     std::vector<std::string> aliases\_;}
+\DoxyCodeLine{73 \};}
+
+\end{DoxyCode}

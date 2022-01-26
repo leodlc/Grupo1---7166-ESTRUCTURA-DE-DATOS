@@ -1,0 +1,117 @@
+\hypertarget{class_menu_option_arguments}{}\doxysection{Menu\+Option\+Arguments Class Reference}
+\label{class_menu_option_arguments}\index{MenuOptionArguments@{MenuOptionArguments}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}{add}} (std\+::string key, \mbox{\hyperlink{class_menu_option_argument}{Menu\+Option\+Argument}}$<$ T $>$ $\ast$argument)
+\begin{DoxyCompactList}\small\item\em agrega un argumento con clave \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_menu_option_arguments_ae204e450b348dbdb1ecd11a67d396035}{add}} (std\+::string key, T value)
+\begin{DoxyCompactList}\small\item\em Agrega un argumento con clave y un valor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{class_menu_option_arguments_ace8889e910baf9b389c6829c2338e1e9}{get}} (std\+::string key)
+\begin{DoxyCompactList}\small\item\em obtiene un argumento por clave \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_menu_option_arguments_afd4098fbce141f17be06b3cbda86e49d}{set}} (std\+::string key, T value)
+\begin{DoxyCompactList}\small\item\em define un argumento por clave y valor \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_option_arguments_aff99b34bc13b0fbf9720c409e355b366}\label{class_menu_option_arguments_aff99b34bc13b0fbf9720c409e355b366}} 
+bool {\bfseries has} (std\+::string key)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}\label{class_menu_option_arguments_ae2e2ddf6e2e2619fc376b406918006d7}} 
+\index{MenuOptionArguments@{MenuOptionArguments}!add@{add}}
+\index{add@{add}!MenuOptionArguments@{MenuOptionArguments}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Menu\+Option\+Arguments\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{\mbox{\hyperlink{class_menu_option_argument}{Menu\+Option\+Argument}}$<$ T $>$ $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+agrega un argumento con clave 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & tipo del argumento \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em argument} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_option_arguments_ae204e450b348dbdb1ecd11a67d396035}\label{class_menu_option_arguments_ae204e450b348dbdb1ecd11a67d396035}} 
+\index{MenuOptionArguments@{MenuOptionArguments}!add@{add}}
+\index{add@{add}!MenuOptionArguments@{MenuOptionArguments}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Menu\+Option\+Arguments\+::add (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+Agrega un argumento con clave y un valor. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & tipo de dato del argumento \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & clave del argumento \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_option_arguments_ace8889e910baf9b389c6829c2338e1e9}\label{class_menu_option_arguments_ace8889e910baf9b389c6829c2338e1e9}} 
+\index{MenuOptionArguments@{MenuOptionArguments}!get@{get}}
+\index{get@{get}!MenuOptionArguments@{MenuOptionArguments}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T Menu\+Option\+Arguments\+::get (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})}
+
+
+
+obtiene un argumento por clave 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & tipo de dato del argumento \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & clave del argumento a obtener \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_option_arguments_afd4098fbce141f17be06b3cbda86e49d}\label{class_menu_option_arguments_afd4098fbce141f17be06b3cbda86e49d}} 
+\index{MenuOptionArguments@{MenuOptionArguments}!set@{set}}
+\index{set@{set}!MenuOptionArguments@{MenuOptionArguments}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Menu\+Option\+Arguments\+::set (\begin{DoxyParamCaption}\item[{std\+::string}]{key,  }\item[{T}]{value }\end{DoxyParamCaption})}
+
+
+
+define un argumento por clave y valor 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & tipo de dato del argumento \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em key} & clave del argumento \\
+\hline
+{\em value} & valor del argumento \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+menu\+\_\+option.\+h\end{DoxyCompactItemize}
