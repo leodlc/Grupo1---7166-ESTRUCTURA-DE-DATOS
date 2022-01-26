@@ -1,0 +1,36 @@
+\hypertarget{marquee_8h_source}{}\doxysection{marquee.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <atomic>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}console.h"{}}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_marquee_character}{MarqueeCharacter}} \{}
+\DoxyCodeLine{8     \textcolor{keywordtype}{char} character;}
+\DoxyCodeLine{9     \textcolor{keywordtype}{short} x;}
+\DoxyCodeLine{10     \textcolor{keywordtype}{short} y;}
+\DoxyCodeLine{11 \};}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{class_marquee}{Marquee}} \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{15     \mbox{\hyperlink{class_marquee}{Marquee}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{16     \mbox{\hyperlink{class_marquee}{Marquee}}(std::string text, \textcolor{keywordtype}{short} limit);}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keywordtype}{void} text(std::string text);}
+\DoxyCodeLine{19     std::string text();}
+\DoxyCodeLine{20     \textcolor{keywordtype}{void} display();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     std::string text\_;}
+\DoxyCodeLine{24     \textcolor{keywordtype}{short} limit\_;}
+\DoxyCodeLine{25     std::thread thread\_;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{bool} running\_ = \textcolor{keyword}{false};}
+\DoxyCodeLine{27     std::atomic\_int step\_ = 0;}
+\DoxyCodeLine{28     }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} process();}
+\DoxyCodeLine{31 \};}
+
+\end{DoxyCode}

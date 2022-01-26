@@ -1,0 +1,75 @@
+\hypertarget{class_menu}{}\doxysection{Menu Class Reference}
+\label{class_menu}\index{Menu@{Menu}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_menu_a55ecc114f70e068cc5496cd333587c10}\label{class_menu_a55ecc114f70e068cc5496cd333587c10}} 
+{\bfseries Menu} (std\+::string title)
+\item 
+void \mbox{\hyperlink{class_menu_af00883540de9adcb6ad516e897c19cd2}{add\+\_\+option}} (\mbox{\hyperlink{class_menu_option}{Menu\+Option}} option)
+\begin{DoxyCompactList}\small\item\em agrega una opcion al menu \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_a94a49db0eb130cb6a6c9d862fb59e281}{remove\+\_\+option}} (int index)
+\begin{DoxyCompactList}\small\item\em remueve una opcion del menu \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_a2e784e39d600214e778acbfcbfe04a1b}\label{class_menu_a2e784e39d600214e778acbfcbfe04a1b}} 
+void {\bfseries display} ()
+\begin{DoxyCompactList}\small\item\em muestra el menu \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_a14199ea81c4618e3cb599d58e0633db0}\label{class_menu_a14199ea81c4618e3cb599d58e0633db0}} 
+void {\bfseries stop} ()
+\begin{DoxyCompactList}\small\item\em detiene el menu \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_menu_a49b5360dca4d3f8de2e4728657b3dba3}{is\+\_\+running}} ()
+\begin{DoxyCompactList}\small\item\em verifica si el menu esta detenido. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_menu_a019960a818e551bb3a3959d32f5145eb}\label{class_menu_a019960a818e551bb3a3959d32f5145eb}} 
+\mbox{\hyperlink{class_menu_option}{Menu\+Option}} {\bfseries exit\+\_\+option} (std\+::string label=\char`\"{}Salir\char`\"{}, bool wait\+\_\+after\+\_\+exec=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_menu_af00883540de9adcb6ad516e897c19cd2}\label{class_menu_af00883540de9adcb6ad516e897c19cd2}} 
+\index{Menu@{Menu}!add\_option@{add\_option}}
+\index{add\_option@{add\_option}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{add\_option()}{add\_option()}}
+{\footnotesize\ttfamily void Menu\+::add\+\_\+option (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu_option}{Menu\+Option}}}]{option }\end{DoxyParamCaption})}
+
+
+
+agrega una opcion al menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em option} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_menu_a49b5360dca4d3f8de2e4728657b3dba3}\label{class_menu_a49b5360dca4d3f8de2e4728657b3dba3}} 
+\index{Menu@{Menu}!is\_running@{is\_running}}
+\index{is\_running@{is\_running}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{is\_running()}{is\_running()}}
+{\footnotesize\ttfamily bool Menu\+::is\+\_\+running (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+verifica si el menu esta detenido. 
+
+\begin{DoxyReturn}{Returns}
+true si esta corriendo, caso contrario devuelve true 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_a94a49db0eb130cb6a6c9d862fb59e281}\label{class_menu_a94a49db0eb130cb6a6c9d862fb59e281}} 
+\index{Menu@{Menu}!remove\_option@{remove\_option}}
+\index{remove\_option@{remove\_option}!Menu@{Menu}}
+\doxysubsubsection{\texorpdfstring{remove\_option()}{remove\_option()}}
+{\footnotesize\ttfamily void Menu\+::remove\+\_\+option (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+remueve una opcion del menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & indice de la opcion a eliminar \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+menu.\+h\item 
+menu.\+cpp\end{DoxyCompactItemize}

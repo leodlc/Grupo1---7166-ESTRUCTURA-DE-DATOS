@@ -1,0 +1,64 @@
+\hypertarget{class_doubly_linked_list}{}\doxysection{Doubly\+Linked\+List\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{class_doubly_linked_list}\index{DoublyLinkedList$<$ T $>$@{DoublyLinkedList$<$ T $>$}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_abf997ec262297608fde8c54e7805051c}\label{class_doubly_linked_list_abf997ec262297608fde8c54e7805051c}} 
+void {\bfseries push\+\_\+back} (const T \&value)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_ac41655c8deb3b123cf48bd8890b9f07e}\label{class_doubly_linked_list_ac41655c8deb3b123cf48bd8890b9f07e}} 
+void {\bfseries push\+\_\+front} (const T \&value)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a802390535cf53c1d400e96c16d8328a1}\label{class_doubly_linked_list_a802390535cf53c1d400e96c16d8328a1}} 
+void {\bfseries push\+\_\+at} (int index, const T \&value)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a8ca412d7bc2cf015b735fa8e3cbdc202}\label{class_doubly_linked_list_a8ca412d7bc2cf015b735fa8e3cbdc202}} 
+void {\bfseries remove\+\_\+at} (int index)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a4e5e9dd9eb47b03c577d08a8c3bbcd24}\label{class_doubly_linked_list_a4e5e9dd9eb47b03c577d08a8c3bbcd24}} 
+void {\bfseries for\+\_\+each} (std\+::function$<$ void(\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$, int)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_ac2cdd7508e6c748400ddf2416c0cefaf}\label{class_doubly_linked_list_ac2cdd7508e6c748400ddf2416c0cefaf}} 
+void {\bfseries for\+\_\+each} (std\+::function$<$ void(\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_af931ac7fe53d06f9982ea4d8b78b93c3}\label{class_doubly_linked_list_af931ac7fe53d06f9982ea4d8b78b93c3}} 
+void {\bfseries for\+\_\+each} (std\+::function$<$ void(T, int)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a9cfc67980819a97b85e352d9c2efd61e}\label{class_doubly_linked_list_a9cfc67980819a97b85e352d9c2efd61e}} 
+void {\bfseries for\+\_\+each} (std\+::function$<$ void(T)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a0dad884003a81abdf664837fecf19f55}\label{class_doubly_linked_list_a0dad884003a81abdf664837fecf19f55}} 
+void {\bfseries until} (std\+::function$<$ bool(\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_aba12638f7b1bfd4eceff3407e85010e4}\label{class_doubly_linked_list_aba12638f7b1bfd4eceff3407e85010e4}} 
+void {\bfseries until} (std\+::function$<$ bool(T)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a0d31f7d5f323523caee1d48468589a98}\label{class_doubly_linked_list_a0d31f7d5f323523caee1d48468589a98}} 
+\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$ {\bfseries find} (std\+::function$<$ bool(\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$, int)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a68d32d0b86f52bbe8b6b48b119a3b6e9}\label{class_doubly_linked_list_a68d32d0b86f52bbe8b6b48b119a3b6e9}} 
+\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$ {\bfseries find} (std\+::function$<$ bool(\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a55d5cea5165dcb7c5aadcd424f65c80b}\label{class_doubly_linked_list_a55d5cea5165dcb7c5aadcd424f65c80b}} 
+\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$ {\bfseries find} (std\+::function$<$ bool(T, int)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_af8f4287736ef49f3c14fd3b40941a403}\label{class_doubly_linked_list_af8f4287736ef49f3c14fd3b40941a403}} 
+\mbox{\hyperlink{class_node}{Node}}$<$ T $>$ $\ast$ {\bfseries find} (std\+::function$<$ bool(T)$>$ callback)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_aba6eba61a5377d145c355bd72d77d1fd}\label{class_doubly_linked_list_aba6eba61a5377d145c355bd72d77d1fd}} 
+T {\bfseries at} (int index)
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a988dab817e94dc8f7b0e8e5b90383971}\label{class_doubly_linked_list_a988dab817e94dc8f7b0e8e5b90383971}} 
+void {\bfseries clear} ()
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a26c2671ad5e562a5f44dc47fda70cbbd}\label{class_doubly_linked_list_a26c2671ad5e562a5f44dc47fda70cbbd}} 
+int {\bfseries size} ()
+\item 
+\mbox{\Hypertarget{class_doubly_linked_list_a3f0318ae6a686923da8a7e18a4cd5762}\label{class_doubly_linked_list_a3f0318ae6a686923da8a7e18a4cd5762}} 
+bool {\bfseries empty} ()
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+doubly\+\_\+linked\+\_\+list.\+h\end{DoxyCompactItemize}

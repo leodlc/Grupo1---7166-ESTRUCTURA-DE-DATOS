@@ -1,0 +1,26 @@
+\hypertarget{console_8h_source}{}\doxysection{console.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <Windows.h>}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{class_console}{Console}}}
+\DoxyCodeLine{6 \{}
+\DoxyCodeLine{7 \textcolor{keyword}{public}:}
+\DoxyCodeLine{8     \mbox{\hyperlink{class_console}{Console}}(\mbox{\hyperlink{class_console}{Console}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{9     \mbox{\hyperlink{class_console}{Console}}\& operator=(\mbox{\hyperlink{class_console}{Console}} \textcolor{keyword}{const}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{10     \textcolor{keyword}{static} \mbox{\hyperlink{class_console}{Console}}\& get();}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12     \textcolor{keywordtype}{void} print(std::string text, COORD coord);}
+\DoxyCodeLine{13     \textcolor{keywordtype}{void} clear\_line(\textcolor{keywordtype}{short} y);}
+\DoxyCodeLine{14     \textcolor{keywordtype}{void} clear\_screen();}
+\DoxyCodeLine{15     \textcolor{keywordtype}{void} clear\_area(SMALL\_RECT area);}
+\DoxyCodeLine{16     \textcolor{keywordtype}{void} set\_cursor\_position(COORD coord);}
+\DoxyCodeLine{17     COORD get\_console\_size();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{private}:}
+\DoxyCodeLine{20     \mbox{\hyperlink{class_console}{Console}}();}
+\DoxyCodeLine{21 \};}
+
+\end{DoxyCode}

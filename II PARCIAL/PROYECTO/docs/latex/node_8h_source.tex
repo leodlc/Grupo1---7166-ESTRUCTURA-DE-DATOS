@@ -1,0 +1,80 @@
+\hypertarget{node_8h_source}{}\doxysection{node.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{4 \textcolor{keyword}{class }\mbox{\hyperlink{class_node}{Node}} \{}
+\DoxyCodeLine{5     \textcolor{keyword}{public}:}
+\DoxyCodeLine{6         \mbox{\hyperlink{class_node}{Node}}(T data);}
+\DoxyCodeLine{7         \mbox{\hyperlink{class_node}{Node}}(T data, \mbox{\hyperlink{class_node}{Node<T>}} *next);}
+\DoxyCodeLine{8         \mbox{\hyperlink{class_node}{Node}}(T data, \mbox{\hyperlink{class_node}{Node<T>}} *next, \mbox{\hyperlink{class_node}{Node<T>}} *previous);}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10         \textcolor{keywordtype}{void} set\_next(\mbox{\hyperlink{class_node}{Node<T>}} *next);}
+\DoxyCodeLine{11         \mbox{\hyperlink{class_node}{Node<T>}} *get\_next();}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13         \textcolor{keywordtype}{void} set\_previous(\mbox{\hyperlink{class_node}{Node<T>}} *next);}
+\DoxyCodeLine{14         \mbox{\hyperlink{class_node}{Node<T>}} *get\_previous();}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16         \textcolor{keywordtype}{void} set\_data(T data);}
+\DoxyCodeLine{17         T get\_data();}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19     \textcolor{keyword}{private}:}
+\DoxyCodeLine{20         T data;}
+\DoxyCodeLine{21         \mbox{\hyperlink{class_node}{Node<T>}} *next = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{22         \mbox{\hyperlink{class_node}{Node<T>}} *previous = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{28 \mbox{\hyperlink{class_node}{Node<T>::Node}}(T data) \{}
+\DoxyCodeLine{29     this-\/>data = data;}
+\DoxyCodeLine{30     this-\/>next = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{31     this-\/>previous = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{32 \}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{35 \mbox{\hyperlink{class_node}{Node<T>::Node}}(T data, \mbox{\hyperlink{class_node}{Node<T>}} *next) \{}
+\DoxyCodeLine{36     this-\/>data = data;}
+\DoxyCodeLine{37     this-\/>next = next;}
+\DoxyCodeLine{38     this-\/>previous = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{39 \}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{42 \mbox{\hyperlink{class_node}{Node<T>::Node}}(T data, \mbox{\hyperlink{class_node}{Node<T>}} *next, \mbox{\hyperlink{class_node}{Node<T>}} *previous) \{}
+\DoxyCodeLine{43     this-\/>data = data;}
+\DoxyCodeLine{44     this-\/>next = next;}
+\DoxyCodeLine{45     this-\/>previous = previous;}
+\DoxyCodeLine{46 \}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{49 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node}{Node<T>::set\_data}}(T data) \{}
+\DoxyCodeLine{50     this-\/>data = data;}
+\DoxyCodeLine{51 \}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{54 T \mbox{\hyperlink{class_node}{Node<T>::get\_data}}() \{}
+\DoxyCodeLine{55     \textcolor{keywordflow}{return} data;}
+\DoxyCodeLine{56 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{59 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node}{Node<T>::set\_next}}(\mbox{\hyperlink{class_node}{Node<T>}} *next) \{}
+\DoxyCodeLine{60     this-\/>next = next;}
+\DoxyCodeLine{61 \}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{64 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_node}{Node<T>::get\_next}}() \{}
+\DoxyCodeLine{65     \textcolor{keywordflow}{return} next;}
+\DoxyCodeLine{66 \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{69 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_node}{Node<T>::set\_previous}}(\mbox{\hyperlink{class_node}{Node<T>}} *previous) \{}
+\DoxyCodeLine{70     this-\/>previous = previous;}
+\DoxyCodeLine{71 \}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{74 \mbox{\hyperlink{class_node}{Node<T>}} *\mbox{\hyperlink{class_node}{Node<T>::get\_previous}}() \{}
+\DoxyCodeLine{75     \textcolor{keywordflow}{return} previous;}
+\DoxyCodeLine{76 \}}
+
+\end{DoxyCode}

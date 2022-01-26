@@ -1,0 +1,58 @@
+\hypertarget{class_operator}{}\doxysection{Operator Class Reference}
+\label{class_operator}\index{Operator@{Operator}}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_operator_ace1e7ed207704a07d8518dc3bf6fc699}\label{class_operator_ace1e7ed207704a07d8518dc3bf6fc699}} 
+enum class {\bfseries Operator\+Type} \{ {\bfseries Regular}
+, {\bfseries Function}
+ \}
+\item 
+\mbox{\Hypertarget{class_operator_aea10dbf485b98040ddfd9cc048314c67}\label{class_operator_aea10dbf485b98040ddfd9cc048314c67}} 
+enum class {\bfseries Operator\+Associativity} \{ {\bfseries Left}
+, {\bfseries Right}
+, {\bfseries None}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_operator_a97c2d8f726a67df36b5a6b00daf28982}\label{class_operator_a97c2d8f726a67df36b5a6b00daf28982}} 
+{\bfseries Operator} (std\+::string symbol, Operation\+Callback callback, Operator\+Type type, Operator\+Associativity associativity, size\+\_\+t precedence, size\+\_\+t operands\+Count)
+\item 
+\mbox{\Hypertarget{class_operator_a2da68261691ec4299aa0d450c615af4d}\label{class_operator_a2da68261691ec4299aa0d450c615af4d}} 
+std\+::string {\bfseries symbol} () const
+\item 
+\mbox{\Hypertarget{class_operator_a642e214d0a44bd7e99a74402474984e4}\label{class_operator_a642e214d0a44bd7e99a74402474984e4}} 
+Operator\+Type {\bfseries type} () const
+\item 
+\mbox{\Hypertarget{class_operator_a4888d690a8d7364dd1fb922f460613d8}\label{class_operator_a4888d690a8d7364dd1fb922f460613d8}} 
+bool {\bfseries matches} (std\+::string symbol)
+\item 
+\mbox{\Hypertarget{class_operator_a1fb56ac3c8285ca864940f67db016422}\label{class_operator_a1fb56ac3c8285ca864940f67db016422}} 
+Operator\+Associativity {\bfseries associativity} () const
+\item 
+\mbox{\Hypertarget{class_operator_a16aa29e49ebb5ac8040282e18a530454}\label{class_operator_a16aa29e49ebb5ac8040282e18a530454}} 
+size\+\_\+t {\bfseries precedence} () const
+\item 
+\mbox{\Hypertarget{class_operator_ae29e4c7707f4ce9f7a3397d73c8086da}\label{class_operator_ae29e4c7707f4ce9f7a3397d73c8086da}} 
+size\+\_\+t {\bfseries operands\+Count} () const
+\item 
+\mbox{\Hypertarget{class_operator_a0de1c4fa7714028984b3d669bf3123a7}\label{class_operator_a0de1c4fa7714028984b3d669bf3123a7}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries aliases} () const
+\item 
+\mbox{\Hypertarget{class_operator_a922137c3cd793c78d2d6fa02b588cf82}\label{class_operator_a922137c3cd793c78d2d6fa02b588cf82}} 
+{\footnotesize template$<$typename... T, typename  = std\+::enable\+\_\+if\+\_\+t$<$(... \&\& is\+\_\+floating\+\_\+point\+\_\+val$<$\+T$>$)$>$$>$ }\\double {\bfseries operate} (T... args)
+\item 
+\mbox{\Hypertarget{class_operator_a318c448a6d31df13c5a5512e5b918aeb}\label{class_operator_a318c448a6d31df13c5a5512e5b918aeb}} 
+double {\bfseries operate} (std\+::vector$<$ double $>$ operands)
+\item 
+\mbox{\Hypertarget{class_operator_a86d853e0f0ba22909c1cd75f6346c9aa}\label{class_operator_a86d853e0f0ba22909c1cd75f6346c9aa}} 
+{\footnotesize template$<$typename... T$>$ }\\\mbox{\hyperlink{class_operator}{Operator}} \& {\bfseries alias} (std\+::string arg, T... args)
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+operator.\+h\item 
+operator.\+cpp\end{DoxyCompactItemize}
